@@ -4,7 +4,11 @@ var { buildSchema } = require('graphql');
 import fetch from 'node-fetch'
 const cors = require('cors')
 
-const mock = [{ house: "Natur", floor: 3, level: 10 }, { house: "Humanist", floor: 2, level: 8 }, { house: "Natur", floor: 4, level: 2 }]
+const mock = [
+    { house: "Natur", floor: 3, level: 10 },
+    { house: "Humanist", floor: 2, level: 8 },
+    { house: "Natur", floor: 4, level: 2 }
+]
 
 // GraphQL schema
 var schema = buildSchema(`
