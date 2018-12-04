@@ -10,6 +10,7 @@ var schema = buildSchema(`
         sensor: Sensor,
         sensorUnique(nr: Int, floor: Int): Sensor,
         zone(id: String): Zone,
+        zones: [Zone]
     },
     type Sensor {
         time: String,
@@ -23,6 +24,7 @@ var schema = buildSchema(`
         vdd: Float,
     },
     type Zone {
+        name: String,
         level: Int,
     }
 `);
@@ -41,6 +43,10 @@ const root = {
     },
     zone: (_) => {
         return ({ level: 1 })
+    },
+    zones: () => {
+        return ([{ name: "Naturhuset våning 3", level: 10 }, { name: "Naturhuset våning 4", level: 2 }])
+
     }
 };
 
