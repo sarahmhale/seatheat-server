@@ -24,8 +24,10 @@ var schema = buildSchema(`
         vdd: Float,
     },
     type Zone {
-        name: String,
+        house: String,
         level: Int,
+        floor: String
+
     }
 `);
 
@@ -45,7 +47,7 @@ const root = {
         return ({ level: 1 })
     },
     zones: () => {
-        return ([{ name: "Naturhuset våning 3", level: 10 }, { name: "Naturhuset våning 4", level: 2 }])
+        return ([{ house: "Natur", floor: "3", level: 10 }, { house: "Natur", floor: "3", level: 2 }])
 
     }
 };
