@@ -26,7 +26,7 @@ var schema = buildSchema(`
     type Zone {
         house: String,
         level: Int,
-        floor: String
+        floor: Int
 
     }
 `);
@@ -47,7 +47,7 @@ const root = {
         return ({ level: 1 })
     },
     zones: () => {
-        return ([{ house: "Natur", floor: "3", level: 10 }, { house: "Natur", floor: "3", level: 2 }])
+        return ([{ house: "Natur", floor: 3, level: 10 }, { house: "Natur", floor: 4, level: 2 }])
 
     }
 };
