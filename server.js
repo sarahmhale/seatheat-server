@@ -2,6 +2,8 @@ var express = require('express');
 var express_graphql = require('express-graphql');
 var { buildSchema } = require('graphql');
 import fetch from 'node-fetch'
+const cors = require('cors')
+
 // GraphQL schema
 var schema = buildSchema(`
     type Query {
@@ -43,7 +45,7 @@ const root = {
 };
 
 var app = express();
-app.use('/graphql', express_graphql({
+app.use('/graphql', cors(), express_graphql({
     schema: schema,
     rootValue: root,
     graphiql: true
