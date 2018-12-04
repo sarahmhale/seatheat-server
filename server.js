@@ -37,6 +37,9 @@ const root = {
             (resp) => resp.json()).then(resp => resp[0])
 
     },
+    zone: (_) => {
+        return ({ level: 1 })
+    }
 };
 
 var app = express();
